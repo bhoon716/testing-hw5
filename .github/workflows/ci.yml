@@ -1,0 +1,25 @@
+name: SW-Testing HW5
+
+# main 브랜치에 push or pull_request 할 경우 jobs 실행
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 코드
+        uses: actions/checkout@v3
+
+      - name: JDK 설정
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: 빌드 및 테스트
+        run: ./gradlew build
