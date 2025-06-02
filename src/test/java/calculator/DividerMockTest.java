@@ -23,7 +23,7 @@ class DividerMockTest {
     }
 
     @Test
-    @DisplayName("나누기 테스트 Mock")
+    @DisplayName("나누기 Mock 테스트")
     void testDivide() {
         //given
         int a = 10;
@@ -41,7 +41,7 @@ class DividerMockTest {
     }
 
     @Test
-    @DisplayName("나머지 연산 테스트 Mock")
+    @DisplayName("나머지 연산 Mock 테스트")
     void testRemainder() {
         //given
         int a = 10;
@@ -60,7 +60,7 @@ class DividerMockTest {
     }
 
     @Test
-    @DisplayName("0으로 나누면 실패")
+    @DisplayName("0으로 나누면 실패 Mock")
     void divideByZeroTest() {
         //given
         int a = 10;

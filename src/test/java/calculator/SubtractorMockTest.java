@@ -1,11 +1,13 @@
 package calculator;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -27,7 +29,7 @@ class SubtractorMockTest {
             "10, 3, 7",
             "1, 5, -4"
     })
-    @DisplayName("뺄셈 테스트")
+    @DisplayName("뺄셈 Mock 테스트")
     void testSubtract(int a, int b, int expected) {
         //given
         //when

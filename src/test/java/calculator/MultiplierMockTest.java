@@ -28,7 +28,7 @@ class MultiplierMockTest {
             "-2, 3, -6",
             "-2, -3, 6"
     })
-    @DisplayName("곱셈 테스트")
+    @DisplayName("곱셈 Mock 테스트")
     void testMultiply(int a, int b, int expected) {
         //given
         //when
