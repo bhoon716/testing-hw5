@@ -12,11 +12,29 @@ public class DividerImpl implements Divider {
 
     @Override
     public int divide(int a, int b) {
-        return 0;
+        if(b == 0) {
+            throw new ArithmeticException("0으로 나눌 수 없음.");
+        }
+
+        int q = 0;
+        while(a >= 0) {
+            a = subtractor.subtract(a, b);
+            if(a < 0) {
+                break;
+            }
+            q++;
+        }
+        return q;
     }
 
     @Override
     public int remainder(int a, int b) {
-        return 0;
+        if(b == 0) {
+            throw new ArithmeticException("0으로 나눌 수 없음.");
+        }
+
+        int d = divide(a, b);
+
+        return a - (multiplier.multiply(d, b));
     }
 }
