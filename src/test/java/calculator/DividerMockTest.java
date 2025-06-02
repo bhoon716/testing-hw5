@@ -19,11 +19,12 @@ class DividerMockTest {
     void setUp() {
         multiplier = mock(Multiplier.class);
         subtractor = mock(Subtractor.class);
+        divider = new DividerImpl(multiplier, subtractor);
     }
 
     @Test
     @DisplayName("나누기 테스트 Mock")
-    void testRemainder() {
+    void testDivide() {
         //given
         int a = 10;
         int b = 3;
@@ -33,6 +34,7 @@ class DividerMockTest {
         when(subtractor.subtract(10, 3)).thenReturn(7);
         when(subtractor.subtract(7, 3)).thenReturn(4);
         when(subtractor.subtract(4, 3)).thenReturn(1);
+        when(subtractor.subtract(1, 3)).thenReturn(-2);
 
         //then
         assertThat(divider.divide(a, b)).isEqualTo(expected);
@@ -40,7 +42,7 @@ class DividerMockTest {
 
     @Test
     @DisplayName("나머지 연산 테스트 Mock")
-    void testDivide() {
+    void testRemainder() {
         //given
         int a = 10;
         int b = 3;
@@ -50,9 +52,11 @@ class DividerMockTest {
         when(subtractor.subtract(10, 3)).thenReturn(7);
         when(subtractor.subtract(7, 3)).thenReturn(4);
         when(subtractor.subtract(4, 3)).thenReturn(1);
+        when(subtractor.subtract(1, 3)).thenReturn(-2);
+        when(multiplier.multiply(3, 3)).thenReturn(9);
 
         //then
-        assertThat(divider.divide(a, b)).isEqualTo(expected);
+        assertThat(divider.remainder(a, b)).isEqualTo(expected);
     }
 
     @Test
