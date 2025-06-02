@@ -14,4 +14,9 @@ public class DividerImpl implements Divider {
     public int divide(int a, int b) {
         return 0;
     }
+
+    @Override
+    public int remainder(int a, int b) {
+        return 0;
+    }
 }
